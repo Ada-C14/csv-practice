@@ -18,14 +18,18 @@ end
 
 
 def total_medals_per_team(olympic_data)
-
-total_medals_hash = Hash.new[0]
-medals_options = %w(Gold Silver Bronze)
-  olympic_data.map do |athlete|
-    if athlete["Medal"].include?(medals_options)
-      total_medals_hash = {athlete["Team"] = athlete["Medal"] += 1}
+  total_medals_hash = {}
+  medals_options = %w(Gold Silver Bronze)
+  olympic_data.each do |athlete|
+    if medals_options.include?(athlete["Medal"])
+      if total_medals_hash[athlete["Team"]]
+        total_medals_hash[athlete["Team"]] += 1
+      else
+        total_medals_hash[athlete["Team"]] = 1
+      end
     end
   end
+  return total_medals_hash
 end
 
 
