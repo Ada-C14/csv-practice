@@ -92,33 +92,33 @@ describe "CSV and Enumerables Exercise" do
     end
   end
 
-  xdescribe 'get_all_gold_medalists' do
-    
-    it 'returns an array of gold medalists' do
-      # Arrange
-      data = get_all_olympic_athletes(OLYMPIC_DATA_FILENAME)
-
-      # Act
-      all_gold_medalists = get_all_gold_medalists(data)
-
-      # Assert
-      expect(all_gold_medalists).must_be_instance_of Array
-      all_gold_medalists.each do |medalist|
-        expect(medalist).must_be_instance_of Hash
-        expect(medalist['Medal']).must_equal "Gold"
-      end
-    end
-
-    it 'has the correct number of gold medalists' do
-      # Arrange
-      data = get_all_olympic_athletes(OLYMPIC_DATA_FILENAME)
-
-      # Act
-      all_gold_medalists = get_all_gold_medalists(data)
-
-      # Assert
-      expect(all_gold_medalists.length).must_equal 2344
-    end
-  end
+  # describe 'get_all_gold_medalists' do
+  #
+  #   it 'returns an array of gold medalists' do
+  #     # Arrange
+  #     data = get_all_olympic_athletes(OLYMPIC_DATA_FILENAME)
+  #
+  #     # Act
+  #     all_gold_medalists = get_all_gold_medalists(data)
+  #
+  #     # Assert
+  #     expect(all_gold_medalists).must_be_instance_of Array
+  #     all_gold_medalists.each do |medalist|
+  #       expect(medalist).must_be_instance_of Hash
+  #       expect(medalist['Medal']).must_equal "Gold"
+  #     end
+  #   end
+  #
+  #   it 'has the correct number of gold medalists' do
+  #     # Arrange
+  #     data = get_all_olympic_athletes(OLYMPIC_DATA_FILENAME)
+  #
+  #     # Act
+  #     all_gold_medalists = get_all_gold_medalists(data)
+  #
+  #     # Assert
+  #     expect(all_gold_medalists.length).must_equal 2344
+  #   end
+  # end
 
 end
