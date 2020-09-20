@@ -33,7 +33,15 @@ def total_medals_per_team(olympic_data)
 end
 
 
-
+def tall_ppl_per_country(olympic_data)
+  tall_ppl_hash = Hash.new(0)
+  olympic_data.each do |athlete|
+    if athlete["Height"].to_i > 180
+      tall_ppl_hash[athlete["Team"]] += 1
+    end
+  end
+  ap tall_ppl_hash.sort_by { |key, value| value}.to_h
+end
 
 # def get_all_gold_medalists(olympic_data)
 # end
